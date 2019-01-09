@@ -1,9 +1,6 @@
 # flutter_ydd
 
-![image](https://github.com/yzxzm/flutter_ydd/tree/master/images/a.jpg)
-![image](https://github.com/yzxzm/flutter_ydd/tree/master/images/b.jpg)
-![image](https://github.com/yzxzm/flutter_ydd/tree/master/images/c.jpg)
-![image](https://github.com/yzxzm/flutter_ydd/tree/master/images/d.jpg)
+![image](https://github.com/yzxzm/flutter_ydd/blob/master/images/a.jpg)
 
 ## Getting Started
 
