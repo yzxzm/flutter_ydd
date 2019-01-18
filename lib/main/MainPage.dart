@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_ydd/home/HomePage.dart';
+import 'package:flutter_ydd/http/HttpPage.dart';
 import 'package:flutter_ydd/info/NewsPage.dart';
 import 'package:flutter_ydd/personal/PersonalPage.dart';
 import 'package:flutter_ydd/type/TypePage.dart';
@@ -14,7 +15,7 @@ class MainPageWidget extends StatefulWidget {
 class MainPageState extends State<MainPageWidget> {
   int _tabIndex = 0;
   var tabImages;
-  var appBarTitles = ['首页', '分类', '消息', '我的'];
+  var appBarTitles = ['首页', '分类', '消息', '网络', '我的'];
 
   var _pageList;
 
@@ -41,7 +42,6 @@ class MainPageState extends State<MainPageWidget> {
 
   @override
   void initState() {
-    // TODO: implement initState
     initData(); //初始化数据
     super.initState();
   }
@@ -60,21 +60,21 @@ class MainPageState extends State<MainPageWidget> {
         getTabImage('images/tab_icon_info_default.png'),
         getTabImage('images/tab_icon_info_selected.png')
       ],
-      /*  [
+      [
         getTabImage('images/tab_icon_shop_default.png'),
         getTabImage('images/tab_icon_shop_selected.png')
-      ],*/
+      ],
       [
         getTabImage('images/tab_icon_personal_default.png'),
         getTabImage('images/tab_icon_personal_selected.png')
       ],
     ];
     _pageList = [
-      new HomePage(),
-      new TypePage(),
-      new NewsPage(),
-      /* new TypePage(),*/
-      new PersonalPage(),
+      HomePage(),
+      TypePage(),
+      NewsPage(),
+      HttpPage(),
+      PersonalPage(),
     ];
   }
 
@@ -82,18 +82,13 @@ class MainPageState extends State<MainPageWidget> {
   Widget build(BuildContext context) {
     return Scaffold(
         body: _pageList[_tabIndex],
-        bottomNavigationBar: new BottomNavigationBar(
+        bottomNavigationBar: BottomNavigationBar(
           items: <BottomNavigationBarItem>[
-            new BottomNavigationBarItem(
-                icon: getTabIcon(0), title: getTabTitle(0)),
-            new BottomNavigationBarItem(
-                icon: getTabIcon(1), title: getTabTitle(1)),
-            new BottomNavigationBarItem(
-                icon: getTabIcon(2), title: getTabTitle(2)),
-            new BottomNavigationBarItem(
-                icon: getTabIcon(3), title: getTabTitle(3)),
-            /*new BottomNavigationBarItem(
-                icon: getTabIcon(4), title: getTabTitle(4)),*/
+            BottomNavigationBarItem(icon: getTabIcon(0), title: getTabTitle(0)),
+            BottomNavigationBarItem(icon: getTabIcon(1), title: getTabTitle(1)),
+            BottomNavigationBarItem(icon: getTabIcon(2), title: getTabTitle(2)),
+            BottomNavigationBarItem(icon: getTabIcon(3), title: getTabTitle(3)),
+            BottomNavigationBarItem(icon: getTabIcon(4), title: getTabTitle(4)),
           ],
           type: BottomNavigationBarType.fixed,
           //默认选中首页
