@@ -81,7 +81,7 @@ class _HttpPageState extends State<HttpPage> {
         UserDetail userDetail = UserDetail.fromJson(data);
         var name = userDetail.username;
         setState(() {
-          httpContent = data;
+          httpContent = data.toString();
         });
       },
       params: p,
