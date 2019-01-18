@@ -1,5 +1,7 @@
 import 'package:dio/dio.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_ydd/module/news.dart';
+import 'package:flutter_ydd/module/user_detail.dart';
 import 'package:flutter_ydd/utils/HttpGo.dart';
 
 class HttpPage extends StatefulWidget {
@@ -59,6 +61,7 @@ class _HttpPageState extends State<HttpPage> {
     HttpGo.getInstance().get(
       getUrl,
       (data) {
+        News news = News.fromJson(data);
         setState(() {
           httpContent = data.toString();
         });
@@ -75,8 +78,10 @@ class _HttpPageState extends State<HttpPage> {
     HttpGo.getInstance().post(
       postUrl,
       (data) {
+        UserDetail userDetail = UserDetail.fromJson(data);
+        var name = userDetail.username;
         setState(() {
-          httpContent = data.toString();
+          httpContent = data;
         });
       },
       params: p,
