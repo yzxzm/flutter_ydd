@@ -1,3 +1,10 @@
+
+# 1.1版本
+对Dio网络请求进行了封装
+# 1.0版本
+仿App上的首页效果图，基本控件的使用
+
+
 # 效果图
 
 ![image](https://github.com/yzxzm/flutter_ydd/blob/master/images/a.png)
