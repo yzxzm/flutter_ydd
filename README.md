@@ -1,4 +1,4 @@
-# flutter_ydd
+# 效果图
 
 ![image](https://github.com/yzxzm/flutter_ydd/blob/master/images/a.png)
 
