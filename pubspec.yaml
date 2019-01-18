@@ -25,6 +25,7 @@ dependencies:
   fluttertoast: ^2.2.6
   json_serializable: ^2.0.0 # 解析
   build_runner: ^1.1.2    # 解析
+  shared_preferences: ^0.4.2
 
 dev_dependencies:
   flutter_test:

@@ -4,6 +4,7 @@ import 'package:flutter_ydd/http/HttpPage.dart';
 import 'package:flutter_ydd/info/NewsPage.dart';
 import 'package:flutter_ydd/personal/PersonalPage.dart';
 import 'package:flutter_ydd/type/TypePage.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 
 class MainPageWidget extends StatefulWidget {
   @override
@@ -18,6 +19,12 @@ class MainPageState extends State<MainPageWidget> {
   var appBarTitles = ['首页', '分类', '消息', '网络', '我的'];
 
   var _pageList;
+
+  static const STRING_KEY = 'string';
+  static const BOOL_KEY = 'bool';
+  static const INT_KEY = 'int';
+  static const DOUBLE_KEY = 'double';
+  static const LIST_KEY = 'list';
 
   Image getTabIcon(int curIndex) {
     if (curIndex == _tabIndex) {
@@ -43,7 +50,18 @@ class MainPageState extends State<MainPageWidget> {
   @override
   void initState() {
     initData(); //初始化数据
+    setSp();
     super.initState();
+  }
+
+  setSp() async {
+    var list = List<String>.generate(5, (i) => 'item$i');
+    SharedPreferences sp = await SharedPreferences.getInstance();
+    sp.setString(STRING_KEY, '我是从MainPage存的数据');
+    sp.setBool(BOOL_KEY, true);
+    sp.setInt(INT_KEY, 1);
+    sp.setDouble(DOUBLE_KEY, 231.111);
+    sp.setStringList(LIST_KEY, list);
   }
 
   void initData() {

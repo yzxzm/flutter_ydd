@@ -1,8 +1,10 @@
 import 'package:dio/dio.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_ydd/main/MainPage.dart';
 import 'package:flutter_ydd/module/news.dart';
 import 'package:flutter_ydd/module/user_detail.dart';
 import 'package:flutter_ydd/utils/HttpGo.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 
 class HttpPage extends StatefulWidget {
   @override
@@ -11,6 +13,22 @@ class HttpPage extends StatefulWidget {
 
 class _HttpPageState extends State<HttpPage> {
   var httpContent = '显示网络数据';
+
+  @override
+  void initState() {
+    // TODO: implement initState
+    getValueForMainPage();
+    super.initState();
+  }
+
+  getValueForMainPage() async {
+    //测试sp的存储
+    SharedPreferences prefs = await SharedPreferences.getInstance();
+    String a = await prefs.getString(MainPageState.STRING_KEY);
+    int b = await prefs.getInt(MainPageState.INT_KEY);
+    bool c = await prefs.getBool(MainPageState.BOOL_KEY);
+    double d = await prefs.getDouble(MainPageState.DOUBLE_KEY);
+  }
 
   @override
   Widget build(BuildContext context) {
