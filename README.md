@@ -1,3 +1,7 @@
+
+# 1.1版本
+对dio网络请求进行了封装
+
 # 效果图
 
 ![image](https://github.com/yzxzm/flutter_ydd/blob/master/images/a.png)
